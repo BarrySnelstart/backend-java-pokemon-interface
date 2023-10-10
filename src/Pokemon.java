@@ -15,12 +15,13 @@ public abstract class Pokemon implements PokemonGym{
     }
 
     private String town;
-    Pokemon(String name, int level, int hp, String food, String sound ){
+    Pokemon(String name, int level, int hp, String food, String sound , String type){
         this.name = name;
         this.level = level;
         this.hp = hp;
         this.food = food;
         this.sound = sound;
+        this.type = type;
     }
 
     public int getLevel() {

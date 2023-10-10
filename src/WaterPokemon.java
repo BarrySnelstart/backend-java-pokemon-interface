@@ -1,18 +1,22 @@
+import java.util.Arrays;
 import java.util.List;
 
-public class WaterPokemon extends Pokemon implements PokemonGym{
-    WaterPokemon(String name, int level, int hp, String food, String sound) {
-        super(name, level, hp, food, sound);
+public class WaterPokemon extends Pokemon implements PokemonGym {
+    WaterPokemon(String name, int level, int hp, String food, String sound, String type)  {
+        super(name, level, hp, food, sound, type);
     }
-    String attacks;
 
-    public String getAttacks() {
+    List<String> attacks = Arrays.asList("surf", "hydroPump", "rainDance", "hydroCanon");
+
+    List <String> getAttacks() {
         return attacks;
     }
 
-    public void setAttacks(String attacks) {
+
+    public void setAttacks(List <String> attacks) {
         this.attacks = attacks;
     }
+
     @Override
     public void enteredTheGym(PokemonTrainer player1) {
 
@@ -67,4 +71,21 @@ public class WaterPokemon extends Pokemon implements PokemonGym{
     public void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym) {
 
     }
+
+    void surf(Pokemon name, Pokemon enemy) {
+
+    }
+
+
+    void hydroPump(Pokemon name, Pokemon enemy) {
+    }
+
+    void hydroCanon(Pokemon name, Pokemon enemy) {
+    }
+
+
+    void rainDance(Pokemon name, Pokemon enemy) {
+    }
+
+
 }

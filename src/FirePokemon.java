@@ -1,99 +1,23 @@
+import java.util.Arrays;
 import java.util.List;
 
 public class FirePokemon extends Pokemon implements PokemonGym{
-    String attacks;
-
-    public String getAttacks() {
+    private List<String> attacks = Arrays.asList("fireLash", "flameThrower", "pyroBall", "inferno");
+    List<String> getAttacks() {
         return attacks;
     }
 
-    public void setAttacks(String attacks) {
+    public void setAttacks(List<String> attacks) {
         this.attacks = attacks;
     }
 
-    FirePokemon(String name, int level, int hp, String food, String sound) {
-        super(name, level, hp, food, sound);
+    FirePokemon(String name, int level, int hp, String food, String sound, String type) {
+        super(name, level, hp, food, sound, type);
     }
 
-    @Override
-    public void surf(Pokemon name, Pokemon enemy) {
 
-    }
 
-    @Override
-    public void fireLash(Pokemon name, Pokemon enemy) {
 
-    }
-
-    @Override
-    public void leafStorm(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void hydroPump(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void thunderPunch(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void electroBall(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void solarBeam(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void flameThrower(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void hydroCanon(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void pyroBall(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void thunder(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void rainDance(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void leechSeed(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void leaveBlade(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void inferno(Pokemon name, Pokemon enemy) {
-
-    }
-
-    @Override
-    public void voltTackle(Pokemon name, Pokemon enemy) {
-
-    }
 
     @Override
     public void enteredTheGym(PokemonTrainer player1) {
@@ -149,4 +73,26 @@ public class FirePokemon extends Pokemon implements PokemonGym{
     public void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym) {
 
     }
+
+
+    void fireLash(Pokemon name, Pokemon enemy) {
+
+    }
+
+
+    void flameThrower(Pokemon name, Pokemon enemy) {
+
+    }
+
+
+    void pyroBall(Pokemon name, Pokemon enemy) {
+
+    }
+
+
+    void inferno(Pokemon name, Pokemon enemy) {
+
+    }
+
+
 }

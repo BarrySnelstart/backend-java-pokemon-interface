@@ -1,17 +1,34 @@
+import java.util.Arrays;
 import java.util.List;
 
-public class ElectricPokemon extends Pokemon{
-    String attacks;
+public class ElectricPokemon extends Pokemon {
+    List<String> attacks = Arrays.asList("thunderPunch", "electroBall", "voltTackle", "thunder");
 
-    public String getAttacks() {
+
+    void thunderPunch(Pokemon name, Pokemon enemy) {
+    }
+
+    void electroBall(Pokemon name, Pokemon enemy) {
+    }
+
+
+    void thunder(Pokemon name, Pokemon enemy) {
+    }
+
+
+    void voltTackle(Pokemon name, Pokemon enemy) {
+    }
+
+    public List <String> getAttacks() {
         return attacks;
     }
 
-    public void setAttacks(String attacks) {
+    public void setAttacks(List <String> attacks) {
         this.attacks = attacks;
     }
-    ElectricPokemon(String name, int level, int hp, String food, String sound) {
-        super(name, level, hp, food, sound);
+
+    ElectricPokemon(String name, int level, int hp, String food, String sound, String type)  {
+        super(name, level, hp, food, sound, type);
     }
 
     @Override
