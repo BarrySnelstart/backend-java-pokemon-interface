@@ -2,8 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ElectricPokemon extends Pokemon {
-    List<String> attacks = Arrays.asList("thunderPunch", "electroBall", "voltTackle", "thunder");
-
+    List <String> attacks = Arrays.asList("thunderPunch", "electroBall", "voltTackle", "thunder");
 
     void thunderPunch(Pokemon name, Pokemon enemy) {
     }
@@ -11,10 +10,8 @@ public class ElectricPokemon extends Pokemon {
     void electroBall(Pokemon name, Pokemon enemy) {
     }
 
-
     void thunder(Pokemon name, Pokemon enemy) {
     }
-
 
     void voltTackle(Pokemon name, Pokemon enemy) {
     }
@@ -23,11 +20,7 @@ public class ElectricPokemon extends Pokemon {
         return attacks;
     }
 
-    public void setAttacks(List <String> attacks) {
-        this.attacks = attacks;
-    }
-
-    ElectricPokemon(String name, int level, int hp, String food, String sound, String type)  {
+    ElectricPokemon(String name, int level, int hp, String food, String sound, String type) {
         super(name, level, hp, food, sound, type);
     }
 

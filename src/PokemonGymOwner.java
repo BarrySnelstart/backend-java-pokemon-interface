@@ -1,10 +1,11 @@
 import java.util.List;
 
-public class PokemonGymOwner extends PokemonTrainer{
+public class PokemonGymOwner extends PokemonTrainer {
     String name;
     List <Pokemon> pokemons;
     String town;
-    PokemonGymOwner(String name, String town, List<Pokemon> pokemons) {
+
+    PokemonGymOwner(String name, String town, List <Pokemon> pokemons) {
         super(name, pokemons);
         this.name = name;
         this.pokemons = pokemons;
@@ -14,11 +15,6 @@ public class PokemonGymOwner extends PokemonTrainer{
     @Override
     public String getName() {
         return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
@@ -33,9 +29,5 @@ public class PokemonGymOwner extends PokemonTrainer{
 
     public String getTown() {
         return town;
-    }
-
-    public void setTown(String town) {
-        this.town = town;
     }
 }

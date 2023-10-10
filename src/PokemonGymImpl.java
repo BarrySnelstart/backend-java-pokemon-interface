@@ -1,12 +1,9 @@
 import java.util.*;
 
-// Los in deze klasse alle foutmeldingen op door (abstracte) klassen met variabelen en methodes te maken en een interface met methodes (en soms een import).
 public class PokemonGymImpl implements PokemonGym {
+    List <Pokemon> pokemons;
 
-
-    List<Pokemon> pokemons;
-
-    public PokemonGymImpl(List<Pokemon> pokemons) {
+    public PokemonGymImpl(List <Pokemon> pokemons) {
         this.pokemons = pokemons;
     }
 
@@ -15,21 +12,20 @@ public class PokemonGymImpl implements PokemonGym {
         PokemonGymOwner gymOwner = new PokemonGymOwner("Brock", "Pewter City", pokemons);
         System.out.println("You have entered the " + gymOwner.getTown() + " gym");
         System.out.println("In front of you stands a pokemontrainer");
-        System.out.println(Main.ANSI_RED + gymOwner.getName() + Main.ANSI_RESET +": Hello stranger, I'm " + gymOwner.getName() + ", the owner of this gym. Who are you?");
+        System.out.println(Main.ANSI_RED + gymOwner.getName() + Main.ANSI_RESET + ": Hello stranger, I'm " + gymOwner.getName() + ", the owner of this gym. Who are you?");
         System.out.println(Main.ANSI_GREEN + player1.getName() + Main.ANSI_RESET + ": I'm " + player1.getName() + " and i'm here to challenge you for a battle");
-        System.out.println(Main.ANSI_RED + gymOwner.getName() + Main.ANSI_RESET +": So you're after my badge too, lets fight!!!");
+        System.out.println(Main.ANSI_RED + gymOwner.getName() + Main.ANSI_RESET + ": So you're after my badge too, lets fight!!!");
 
         Pokemon gymPokemon = chooseGymPokemon(gymOwner);
-        System.out.println(Main.ANSI_RED + gymOwner.getName() + Main.ANSI_RESET +": I'll choose you, " + gymPokemon.getName());
+        System.out.println(Main.ANSI_RED + gymOwner.getName() + Main.ANSI_RESET + ": I'll choose you, " + gymPokemon.getName());
         Pokemon pokemon = choosePokemon(player1);
         System.out.println(Main.ANSI_GREEN + player1.getName() + Main.ANSI_RESET + ": I'll choose you, " + pokemon.getName());
 
         fightRound(player1, gymOwner, pokemon, gymPokemon);
-
     }
 
     @Override
-    public void printPokemon(List<Pokemon> pokemons) {
+    public void printPokemon(List <Pokemon> pokemons) {
         for (Pokemon p : pokemons) {
             System.out.println(p.getName());
         }
@@ -37,7 +33,7 @@ public class PokemonGymImpl implements PokemonGym {
 
     @Override
     public Pokemon selectPokemon(String pokemon, PokemonTrainer trainer) {
-        List<Pokemon> pokemons = trainer.getPokemons();
+        List <Pokemon> pokemons = trainer.getPokemons();
         int number = 0;
         for (int i = 0; i < pokemons.size(); i++) {
             if (pokemons.get(i).getName().equalsIgnoreCase(pokemon)) {
@@ -56,17 +52,16 @@ public class PokemonGymImpl implements PokemonGym {
             gymOwnerAttacks(gymPokemon, pokemon);
             System.out.println("Its " + trainer.getName() + "'s turn to attack");
             attackOrChange(pokemon, gymPokemon, trainer, owner);
-
         }
-        if(pokemon.getHp() <= 0){
+        if (pokemon.getHp() <= 0) {
             System.out.println(gymPokemon.getName() + " has defeated " + pokemon.getName());
-        } else if (gymPokemon.getHp() <= 0){
+        } else if (gymPokemon.getHp() <= 0) {
             System.out.println(pokemon.getName() + " has defeated " + gymPokemon.getName());
         }
 
         System.out.println("Would you like to keep playing? yes or no");
         String keepPlaying = speler_A.nextLine();
-        if (keepPlaying.equals("yes")){
+        if (keepPlaying.equals("yes")) {
             enteredTheGym(trainer);
         } else {
             System.out.println("Thank you for playing");
@@ -74,11 +69,11 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public Pokemon chooseGymPokemon(PokemonGymOwner gymOwner){
+    public Pokemon chooseGymPokemon(PokemonGymOwner gymOwner) {
         Random rand = new Random();
-        List<Pokemon> pokemons = new ArrayList <>();
+        List <Pokemon> pokemons = new ArrayList <>();
         for (Pokemon p : gymOwner.getPokemons()) {
-            if(p.getHp() > 0 ){
+            if (p.getHp() > 0) {
                 pokemons.add(p);
             }
         }
@@ -88,11 +83,11 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public Pokemon choosePokemon(PokemonTrainer trainer){
+    public Pokemon choosePokemon(PokemonTrainer trainer) {
         Scanner speler_A = new Scanner(System.in);
-        List<Pokemon> pokemons = new ArrayList<>();
+        List <Pokemon> pokemons = new ArrayList <>();
         for (Pokemon p : trainer.getPokemons()) {
-            if(p.getHp() > 0 ){
+            if (p.getHp() > 0) {
                 pokemons.add(p);
             }
         }
@@ -105,14 +100,14 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public int randomAttackByGymOwner(){
+    public int randomAttackByGymOwner() {
         Random rand = new Random();
         int maxAttacks = 4;
         return rand.nextInt(maxAttacks);
     }
 
     @Override
-    public String chooseAttackPlayer(Pokemon p){
+    public String chooseAttackPlayer(Pokemon p) {
         Scanner speler_A = new Scanner(System.in);
         String type = p.getType();
         switch (type) {
@@ -144,7 +139,7 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack){
+    public void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack) {
         FirePokemon fire;
         ElectricPokemon electric;
         GrassPokemon grass;
@@ -193,7 +188,7 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon){
+    public void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon) {
         FirePokemon fire;
         ElectricPokemon electric;
         GrassPokemon grass;
@@ -244,7 +239,7 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym){
+    public void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym) {
         Scanner speler_A = new Scanner(System.in);
 
         System.out.println("Do you want to attack or change your pokemon?");
