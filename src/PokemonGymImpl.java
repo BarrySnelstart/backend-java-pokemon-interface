@@ -50,8 +50,11 @@ public class PokemonGymImpl implements PokemonGym {
 
             System.out.println("Its " + owner.getName() + "'s turn to attack");
             gymOwnerAttacks(gymPokemon, pokemon);
+            System.out.println(pokemon.getName() + " pokemon" +" is level " +pokemon.getLevel());
             System.out.println("Its " + trainer.getName() + "'s turn to attack");
             attackOrChange(pokemon, gymPokemon, trainer, owner);
+            System.out.println(gymPokemon.getName() + " pokemon" +" is level " +pokemon.getLevel());
+
         }
         if (pokemon.getHp() <= 0) {
             System.out.println(gymPokemon.getName() + " has defeated " + pokemon.getName());
